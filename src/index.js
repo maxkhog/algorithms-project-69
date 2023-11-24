@@ -7,9 +7,11 @@ export default (docs, searchedWord) => {
     return [];
   }
 
+  const term = searchedWord.match(/\w+/g);
+
   const result = [];
   docs.forEach((doc) => {
-    if (doc.text.includes(searchedWord)) {
+    if (doc.text.includes(term)) {
       result.push(doc.id);
     }
   });

@@ -17,3 +17,11 @@ test('search word', () => {
 test('search word in empty array', () => {
   expect(search([], 'shoot')).toEqual(expect.arrayContaining([]));
 });
+
+test('search word with token 1', () => {
+  expect(search(docs, 'pint')).toEqual(expect.arrayContaining(['doc1']));
+});
+
+test('search word with token 2', () => {
+  expect(search(docs, 'pint!')).toEqual(expect.arrayContaining(['doc1']));
+});
